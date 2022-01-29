@@ -8,6 +8,8 @@ const app = express();
 
 app.use(express.json());
 
-app.listen(port, () => {
-    console.log("app is listening")
+app.use("/", (req, res) => {
+    res.status(200).send("ok");
 });
+
+module.exports = app;
