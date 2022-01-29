@@ -2,14 +2,14 @@ require("dotenv").config();
 
 const express = require("express");
 
-const port = process.env.PORT;
+const userRouter = require("./routes/user");
 
 const app = express();
 
 app.use(express.json());
 
-app.use("/", (req, res) => {
-    res.status(200).send("ok");
-});
+app.use("/user", userRouter);
+
+
 
 module.exports = app;
